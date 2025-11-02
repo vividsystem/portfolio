@@ -1,5 +1,5 @@
 import { Meta, Title } from "@solidjs/meta"
-import { createAsync, query } from "@solidjs/router"
+import { createAsync, query, useParams } from "@solidjs/router"
 import { createResource, For, Show } from "solid-js"
 import RepoCard from "~/components/RepoCard"
 
@@ -16,8 +16,11 @@ export interface Repository {
 	watchers_count: number
 	size: number // in kB
 	tags_url: string
-	topics_url: string
-	languages_url: string
+	topics: string[]
+	language?: string
+}
+
+export interface FullRepository extends Repository {
 }
 
 const getRepos = query(async () => {
@@ -25,11 +28,22 @@ const getRepos = query(async () => {
 	if (!res.ok) {
 		return
 	}
-	const repos = await res.json()
-	return repos as Array<Repository>
+	let repos: Repository[];
+	try {
+		repos = await res.json() as Repository[]
+
+	} catch (e) {
+		console.log(e, res)
+		return
+	}
+
+	return repos
+
 }, "get_repos")
 
+
 export default function Projects() {
+	const params = useParams();
 	const allowed_forks: string[] = []
 	const hidden_repos: string[] = ["portfolio", "vividsystem", "siege"]
 	const repos = createAsync(() => getRepos())
@@ -49,7 +63,7 @@ export default function Projects() {
 					</div>
 				}>
 					{(repo) => (
-						<Show when={(!repo.fork || allowed_forks.includes(repo.name)) && !hidden_repos.includes(repo.name)}>
+						<Show when={(!repo.fork || allowed_forks.includes(repo.name)) && !hidden_repos.includes(repo.name) && (!params.type || repo.topics.includes(params.type))}>
 							<RepoCard repo={repo} />
 						</Show>
 					)}

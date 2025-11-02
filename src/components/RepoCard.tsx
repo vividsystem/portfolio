@@ -3,24 +3,7 @@ import { ArrowUpRight, CodeXml, GitMerge, GitPullRequest } from "lucide-solid";
 import { createEffect, createResource, Show } from "solid-js";
 import { Repository } from "~/routes/projects";
 
-const getTopics = query(async (topics_url) => {
-	const res = await fetch(topics_url)
-	const data = (await res.json()) as { names: Array<string> }
-	return data.names
-}, "get_topics")
-
-const getLanguages = query(async (languages_url) => {
-	const res = await fetch(languages_url)
-	const data = (await res.json()) as { [lang: string]: number }
-	return Object.keys(data)
-}, "get_languages")
-
 export default function RepoCard(props: { repo: Repository }) {
-	const topics = createAsync(() => getTopics(props.repo.topics_url))
-	const languages = createAsync(() => getLanguages(props.repo.languages_url))
-	createEffect(() => {
-		console.log(languages.latest)
-	})
 	return (
 
 		<div class="bg-primary p-4 w-full shadow-solid-vivid-pink flex flex-col last:justify-self-end relative">
@@ -35,8 +18,8 @@ export default function RepoCard(props: { repo: Repository }) {
 				</div>
 			</div>
 			<p class="text-secondary text-lg lg:text-2xl">{props.repo.description}</p>
-			<Show when={languages.latest !== undefined}>
-				<p class="text-secondary static bottom-0 mt-auto">written in {languages.latest?.join(", ")}</p>
+			<Show when={props.repo.language}>
+				<p class="text-secondary static bottom-0 mt-auto">written in {props.repo.language}</p>
 			</Show>
 
 

@@ -27,8 +27,8 @@ export default function Nav() {
 							}}>
 								<div class="rounded-2xl p-4 bg-vivid-pink">
 									<ul class="flex flex-col gap-2">
-										<li class="link-navy px-2">Software</li>
-										<li class="link-navy px-2">Hardware</li>
+										<li class="link-navy px-2"><A href="/projects/software">Software</A></li>
+										<li class="link-navy px-2"><A href="/projects/hardware">Hardware</A></li>
 										<hr class="border-navy border-2 border-dotted" />
 										<li class="link-navy px-2"><A href="/projects" />See all</li>
 									</ul>
