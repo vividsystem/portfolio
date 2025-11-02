@@ -37,6 +37,7 @@
 		text-decoration-color: var(--color-vivid-pink);
 		text-underline-offset: 0.4em;
 	}
+
 }
 @custom-variant any-hover {  
 	@media (any-hover: hover) {
@@ -56,4 +57,8 @@ body {
 	font-family: var(--font-normal);
 	background-color: var(--color-navy);
 
+}
+
+* {
+	cursor: default;
 }
