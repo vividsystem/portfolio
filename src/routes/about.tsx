@@ -1,23 +1,18 @@
+import { Meta, Title } from "@solidjs/meta";
 import { A } from "@solidjs/router";
 
 export default function About() {
 	return (
-		<main class="text-center mx-auto text-gray-700 p-4">
-			<h1 class="max-6-xs text-6xl text-sky-700 font-thin uppercase my-16">About Page</h1>
-			<p class="mt-8">
-				Visit{" "}
-				<a href="https://solidjs.com" target="_blank" class="text-sky-600 hover:underline">
-					solidjs.com
-				</a>{" "}
-				to learn how to build Solid apps.
-			</p>
-			<p class="my-4">
-				<A href="/" class="text-sky-600 hover:underline">
-					Home
-				</A>
-				{" - "}
-				<span>About Page</span>
-			</p>
+		<main class="mx-auto text-primary p-4">
+			<Title>About vividsystem</Title>
+			<Meta
+				name="description"
+				content="The about me page of vividsystem's personal website"
+			/>
+
+			<div class="w-fit m-0 p-4">
+				<p class="float-left max-w-[75ch]">My name is <span class="supports-hover:not-hover:bg-primary bg-none"> [REDACTED]</span>, but you can call me vividsystem.<br />I am a student building software and hardware in his free-time. My current focus lies in full-stack web development.</p>
+			</div>
 		</main>
 	);
 }
