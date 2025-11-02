@@ -22,30 +22,68 @@
 }
 
 
-.link {
-	@apply underline underline-offset-[0.2em];
-
-}
 
 @utility shadow-solid-* {
 	/* x y blur spread */
 	box-shadow: --value(--color-*) 0.5rem 0.5rem 0px 0.15rem;
 }
 
-@media(hover:hover) {
-	.link {
-		text-decoration: underline 0.15em;
-		text-underline-offset: 0.2em;
-		transition: text-decoration-thickness 300ms, text-underline-offset 300ms;
-		@apply py-2;
-	}
-
-	.link:hover {
-		text-decoration-color: var(--color-vivid-pink);
-		text-underline-offset: 0.4em;
-	}
-
+@utility text-shadow-solid-* {
+	/* x y blur spread */
+	text-shadow: --value(--color-*) 0.25rem 0.25rem 0px;
 }
+
+@utility link-* {
+
+	& {
+		@apply underline underline-offset-[0.2em];
+	}
+
+	@media(hover:hover) {
+		& {
+			text-decoration: underline 0.15em;
+			text-underline-offset: 0.2em;
+			transition: text-decoration-thickness 300ms, text-underline-offset 300ms;
+			@apply py-2 border-1 border-transparent;
+		}
+
+		&:hover {
+			text-decoration-color: ----value(--color-*);
+			text-underline-offset: 0.4em;
+			border-color: --value(--color-*);
+		}
+
+	}
+}
+
+
+@utility fancy-underline-* {
+
+	& {
+		@apply underline underline-offset-[0.2em];
+	}
+
+	@media(hover:hover) {
+		& {
+			text-decoration: underline 0.15em;
+			text-underline-offset: 0.2em;
+			transition: text-decoration-thickness 300ms, text-underline-offset 300ms;
+		}
+
+		&:hover {
+			text-decoration-color: ----value(--color-*);
+			text-underline-offset: 0.4em;
+		}
+
+	}
+}
+
+body:has(a:hover) #cursor {
+	opacity: 0;
+}
+
+
+
 @custom-variant any-hover {  
 	@media (any-hover: hover) {
 		&:hover {      

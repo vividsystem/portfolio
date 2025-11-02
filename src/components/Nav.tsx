@@ -12,10 +12,10 @@ export default function Nav() {
 			<div class="fixed bottom-0 left-0 right-0 flex flex-row items-center justify-center p-4">
 				<nav class="bg-vivid-pink rounded-4xl text-navy flex items-center">
 					<ul class="container flex justify-center items-center p-3 relative">
-						<li class="link px-2 relative">
+						<li class="link-navy px-2 relative">
 							<A href="/about">About</A>
 						</li>
-						<li class="link px-2 group/projects relative">
+						<li class="link-navy px-2 group/projects relative">
 							<A href="/projects" onClick={(e) => {
 								if (noHover()) {
 									e.preventDefault()
@@ -27,16 +27,16 @@ export default function Nav() {
 							}}>
 								<div class="rounded-2xl p-4 bg-vivid-pink">
 									<ul class="flex flex-col gap-2">
-										<li class="link px-2">Software</li>
-										<li class="link px-2">Hardware</li>
+										<li class="link-navy px-2">Software</li>
+										<li class="link-navy px-2">Hardware</li>
 										<hr class="border-navy border-2 border-dotted" />
-										<li class="link px-2"><A href="/projects" />See all</li>
+										<li class="link-navy px-2"><A href="/projects" />See all</li>
 									</ul>
 								</div>
 							</div>
 						</li>
 
-						<li class="link px-2 relative">
+						<li class="link-navy px-2 relative">
 							<A href="/contact">Contact</A>
 						</li>
 

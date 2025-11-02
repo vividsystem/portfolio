@@ -32,12 +32,10 @@ export default function Cursor() {
 	})
 
 	return (
-		<div>
-			<PositionableElement x={pos.x} y={pos.y} class="absolute z-[5000] rounded-full border-2 border-vivid-pink supports-hover:visible size-16 invisible -translate-x-1/2 -translate-y-1/2 pointer-events-none flex items-center justify-center" >
-				<div class="supports-hover:visible size-2  invisible bg-vivid-pink rounded-full">
-				</div>
+		<PositionableElement x={pos.x} y={pos.y} class="absolute z-[5000] rounded-full border-2 border-vivid-pink supports-hover:visible size-16 invisible -translate-x-1/2 -translate-y-1/2 pointer-events-none flex items-center justify-center" id="cursor">
+			<div class="supports-hover:visible size-2  invisible bg-vivid-pink rounded-full">
+			</div>
 
-			</PositionableElement>
-		</div>
+		</PositionableElement>
 	)
 }
