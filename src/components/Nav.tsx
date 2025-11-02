@@ -30,7 +30,7 @@ export default function Nav() {
 										<li class="link px-2">Software</li>
 										<li class="link px-2">Hardware</li>
 										<hr class="border-navy border-2 border-dotted" />
-										<li class="link px-2">See all</li>
+										<li class="link px-2"><A href="/projects" />See all</li>
 									</ul>
 								</div>
 							</div>
