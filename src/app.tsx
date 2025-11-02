@@ -12,21 +12,26 @@ export default function App() {
 		<Router
 			root={props => (
 				<>
-					<MetaProvider>
-						<Meta
-							name="author"
-							content="vividsystem"
-						/>
-						<Meta
-							name="application-name"
-							content="vividsystem's portfolio"
-						/>
 
-						<Header />
-						<Suspense>{props.children}</Suspense>
-						<Nav />
-						<Cursor />
-					</MetaProvider>
+					<Header />
+					<Suspense>
+
+						<MetaProvider>
+							<Meta
+								name="author"
+								content="vividsystem"
+							/>
+							<Meta
+								name="application-name"
+								content="vividsystem's portfolio"
+							/>
+							{props.children}
+
+						</MetaProvider>
+					</Suspense>
+
+					<Nav />
+					<Cursor />
 				</>
 			)}
 		>

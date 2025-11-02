@@ -3,7 +3,7 @@ import { A } from "@solidjs/router";
 
 export default function Home() {
 	return (
-		<main class="flex flex-col justify-self-center items-center p-4 min-h-full">
+		<main class="flex flex-col flex-grow justify-center items-center p-4 min-h-full">
 			<Title>vividsystem</Title>
 			<div>
 				<h1 class="text-4xl lg:text-9xl text-primary font-normal py-4">Hi, I am <br /><span class="intro supports-hover:not-hover:bg-primary supports-hover:hover:text-vivid-pink">vividsystem</span></h1>

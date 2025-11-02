@@ -11,8 +11,8 @@ export default createHandler(() => (
 					<link rel="icon" href="/favicon.svg" />
 					{assets}
 				</head>
-				<body>
-					<div id="app">{children}</div>
+				<body class="flex flex-col min-h-screen">
+					<div id="app" class="flex flex-col min-h-screen">{children}</div>
 					{scripts}
 				</body>
 			</html>
