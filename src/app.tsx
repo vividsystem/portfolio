@@ -4,6 +4,7 @@ import { Suspense } from "solid-js";
 import Nav from "~/components/Nav";
 import "./app.css";
 import Header from "./components/Header";
+import Cursor from "./components/Cursor";
 
 export default function App() {
 	return (
@@ -13,6 +14,7 @@ export default function App() {
 					<Header />
 					<Suspense>{props.children}</Suspense>
 					<Nav />
+					<Cursor />
 				</>
 			)}
 		>
