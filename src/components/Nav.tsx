@@ -23,14 +23,16 @@ export default function Nav() {
 								}
 							}}>Projects</A>
 							<div class="group-hover/projects:visible group-hover/projects:pointer-events-auto group-focus/projects:visible invisible pointer-events-none absolute bottom-full pb-6  left-1/2 -translate-x-1/2" classList={{
-								"visible": open() && noHover()
+								"visible": open() && noHover(),
 							}}>
-								<div class="rounded-2xl p-4 bg-vivid-pink">
+								<div class="rounded-2xl p-4 bg-vivid-pink" classList={{
+									"pointer-events-auto": open() && noHover()
+								}}>
 									<ul class="flex flex-col gap-2">
-										<li class="link-navy px-2"><A href="/projects/software">Software</A></li>
-										<li class="link-navy px-2"><A href="/projects/hardware">Hardware</A></li>
+										<li class=""><A class="link-navy px-2" href="/projects/software">Software</A></li>
+										<li class=""><A class="link-navy px-2" href="/projects/hardware">Hardware</A></li>
 										<hr class="border-navy border-2 border-dotted" />
-										<li class="link-navy px-2"><A href="/projects" />See all</li>
+										<li class=""><A class="link-navy px-2" href="/projects">See all</A></li>
 									</ul>
 								</div>
 							</div>
