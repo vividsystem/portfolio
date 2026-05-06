@@ -44,7 +44,7 @@
 			text-decoration: underline 0.15em;
 			text-underline-offset: 0.2em;
 			transition: text-decoration-thickness 300ms, text-underline-offset 300ms;
-			@apply py-2 border-1 border-transparent;
+			@apply p-2 border-1 border-transparent;
 		}
 
 		&:hover {
@@ -94,7 +94,7 @@ body:has(a:hover) #cursor {
 
 @custom-variant supports-hover {  
 	@media (any-hover: hover) {
-			@slot;    
+		@slot;    
 	}
 }
 
@@ -105,5 +105,5 @@ body {
 }
 
 * {
-	cursor: default;
+	cursor: none;
 }

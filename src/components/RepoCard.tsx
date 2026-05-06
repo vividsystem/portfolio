@@ -12,7 +12,7 @@ export default function RepoCard(props: { repo: Repository }) {
 				<h2 class="text-xl lg:text-3xl text-navy text-bold underline underline-offset-4 underline-vivid-pink decoration-5">{props.repo.fork ? props.repo.full_name : props.repo.name}</h2>
 				<div class="flex flex-row">
 					<Show when={props.repo.homepage}>
-						<A href={props.repo.homepage!}><ArrowUpRight /></A>
+						<A href={props.repo.homepage!}><ArrowUpRight class="size-8 hover:stroke-vivid-pink" /></A>
 					</Show>
 					<A href={props.repo.html_url}><GitPullRequest class="size-8 hover:stroke-vivid-pink" /></A>
 				</div>
