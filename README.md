@@ -3,7 +3,7 @@ My personal portfolio website built using [`solid-start`](https://start.solidjs.
 ## Features
 * automated project page -> fetches all my repos automatically. also supports filtering by topics (like software, hardware)
 * the other stuff you would expect from a portfolio site like: about me and contact
-* very cool and fancy cursor (desktop only)
+* very cool and fancy cursor (desktop only) and hover animations
 * full mobile-support
 ## Deploying
 ```bash
