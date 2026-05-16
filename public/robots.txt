@@ -1,0 +1,67 @@
+# OpenAI
+User-agent: GPTBot
+Disallow: /
+
+# Anthropic
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+# Google AI training (separate from Googlebot search crawler)
+User-agent: Google-Extended
+Disallow: /
+
+# Common Crawl (primary source for most LLM training datasets)
+# might consider allowing this in the future due to opensource non-profit
+User-agent: CCBot
+Disallow: /
+
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+User-agent: Meta-ExternalFetcher
+Disallow: /
+
+# ByteDance / TikTok
+User-agent: Bytespider
+Disallow: /
+
+
+# Cohere
+User-agent: cohere-ai
+Disallow: /
+
+# Diffbot
+User-agent: Diffbot
+Disallow: /
+
+# Omgili / Webz.io
+User-agent: omgili
+Disallow: /
+
+User-agent: omgilibot
+Disallow: /
+
+User-agent: webzio-extended
+Disallow: /
+
+# ImagesiftBot
+User-agent: ImagesiftBot
+Disallow: /
+
+# iaskspider (iAsk AI)
+User-agent: iaskspider
+Disallow: /
+
+User-agent: iaskspider/2.0
+Disallow: /
+
+# this is redundant but I like the project so I do it anyways
+User-agent: heritrix
+Allow: /
+# Allow all legitimate crawlers
+User-agent: *
+Allow: /
