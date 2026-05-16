@@ -29,10 +29,10 @@ export default function Nav() {
 									"pointer-events-auto": open() && noHover()
 								}}>
 									<ul class="flex flex-col gap-2">
-										<li class=""><A class="link-navy px-2" href="/projects/software">Software</A></li>
-										<li class=""><A class="link-navy px-2" href="/projects/hardware">Hardware</A></li>
+										<li class=""><A class="link-navy px-2" href="/projects/software" onClick={() => setOpened(false)}>Software</A></li>
+										<li class=""><A class="link-navy px-2" href="/projects/hardware" onClick={() => setOpened(false)}>Hardware</A></li>
 										<hr class="border-navy border-2 border-dotted" />
-										<li class=""><A class="link-navy px-2" href="/projects">See all</A></li>
+										<li class=""><A class="link-navy px-2" href="/projects" onClick={() => setOpened(false)}>See all</A></li>
 									</ul>
 								</div>
 							</div>
