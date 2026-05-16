@@ -48,7 +48,7 @@ export default function Projects() {
 	const hidden_repos: string[] = ["portfolio", "vividsystem", "siege"]
 	const repos = createAsync(() => getRepos())
 	return (
-		<main class="p-4">
+		<main class="p-4 pb-20">
 			<Title>projects | vividsystem</Title>
 			<Meta
 				name="description"

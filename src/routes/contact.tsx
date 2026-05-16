@@ -4,7 +4,7 @@ import { GithubIcon, SlackIcon } from "~/components/Icons";
 
 export default function Contact() {
 	return (
-		<main class="p-4 text-primary">
+		<main class="p-4 text-primary pb-20">
 			<h1 class="text-2xl lg:text-5xl text-shadow-solid-vivid-pink underline decoration-8 pb-4">Contact</h1>
 			<p class="text-xl lg:text-4xl">Below you'll find my socials. I might take ages to respond.</p>
 			<div>

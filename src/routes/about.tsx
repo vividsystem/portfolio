@@ -3,7 +3,7 @@ import { A } from "@solidjs/router";
 
 export default function About() {
 	return (
-		<main class="mx-auto text-primary p-4">
+		<main class="mx-auto text-primary p-4 pb-20">
 			<Title>About vividsystem</Title>
 			<Meta
 				name="description"
