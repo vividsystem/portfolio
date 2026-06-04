@@ -11,3 +11,28 @@ bun run build
 bun run ./.output/server/index.mjs
 ```
 
+systemd service
+```
+[Unit]
+Description=portfolio
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/srv/portfolio
+ExecStart=/usr/local/bin/bun run .output/server/index.mjs
+Restart=on-failure
+RestartSec=5
+
+# Environment (for reverse proxy)
+Environment=NODE_ENV=production
+Environment=PORT=3000
+
+# Logging (goes to journald)
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
+```
