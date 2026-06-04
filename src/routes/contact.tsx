@@ -16,12 +16,12 @@ export default function Contact() {
 				<A href="https://hackclub.slack.com/team/U097J2YPW1H" class="flex flex-row items-center p-2 gap-2 link-vivid-pink no-underline w-fit">
 					<SlackIcon class="size-8 fill-white" />
 					<h2 class="text-xl lg:text-4xl">@vividsystem (for HC)</h2>
-					<ArrowUpRight class="size-8 stroke-[4]" />
+					<ArrowUpRight class="size-8 stroke-4" />
 				</A>
 				<A href="https://github.com/vividsystem" class="flex flex-row items-center p-2 gap-2 link-vivid-pink no-underline w-fit">
 					<GithubIcon class="size-8 fill-white" />
 					<h2 class="text-xl lg:text-4xl">@vividsystem</h2>
-					<ArrowUpRight class="size-8 stroke-[4]" />
+					<ArrowUpRight class="size-8 stroke-4" />
 				</A>
 
 			</div>

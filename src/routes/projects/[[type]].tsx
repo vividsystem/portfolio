@@ -1,6 +1,6 @@
 import { Meta, Title } from "@solidjs/meta"
 import { createAsync, query, useParams } from "@solidjs/router"
-import { createResource, For, Show } from "solid-js"
+import { For, Show } from "solid-js"
 import RepoCard from "~/components/RepoCard"
 
 export interface Repository {

@@ -3,7 +3,7 @@ import { A } from "@solidjs/router";
 
 export default function Home() {
 	return (
-		<main class="flex flex-col flex-grow justify-center items-center p-4 min-h-full">
+		<main class="flex flex-col grow justify-center items-center p-4 min-h-full">
 			<Title>vividsystem</Title>
 			<Meta
 				name="description"

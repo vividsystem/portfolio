@@ -1,6 +1,5 @@
-import { createMousePosition, MousePosition, useMousePosition } from "@solid-primitives/mouse";
-import { children, createEffect, createSignal, JSX, onMount, ParentProps, Show, splitProps } from "solid-js";
-import { Portal } from "solid-js/web";
+import { createMousePosition } from "@solid-primitives/mouse";
+import { createEffect, createSignal, JSX, ParentProps, splitProps } from "solid-js";
 
 interface PositionableElementProps extends JSX.HTMLAttributes<HTMLDivElement> {
 	x: number
@@ -23,16 +22,16 @@ export const PositionableElement = (props: ParentProps<PositionableElementProps>
 export default function Cursor() {
 	const [r, setR] = createSignal<Window | undefined>(undefined)
 	const pos = createMousePosition(r())
-	const [delta, setDelta] = createSignal<{ x: number, y: number }>({ x: pos.x, y: pos.y })
+	const [_delta, setDelta] = createSignal<{ x: number, y: number }>({ x: pos.x, y: pos.y }) // why? is this for reactivity?
 	createEffect(() => {
 		if (window !== r()) {
-			setR(r)
+			setR(window)
 		}
-		setDelta((prev) => ({ x: pos.x - prev.x, y: pos.y - prev.y }))
+		setDelta((prev) => ({ x: pos.x - prev.x, y: pos.y - prev.y })) // why?
 	})
 
 	return (
-		<PositionableElement x={pos.x} y={pos.y} class="absolute z-[5000] rounded-full border-2 border-vivid-pink supports-hover:visible size-16 invisible -translate-x-1/2 -translate-y-1/2 pointer-events-none flex items-center justify-center" id="cursor">
+		<PositionableElement x={pos.x} y={pos.y} class="absolute z-5000 rounded-full border-2 border-vivid-pink supports-hover:visible size-16 invisible -translate-x-1/2 -translate-y-1/2 pointer-events-none flex items-center justify-center" id="cursor">
 			<div class="supports-hover:visible size-2  invisible bg-vivid-pink rounded-full">
 			</div>
 

@@ -43,7 +43,7 @@
 			text-decoration: underline 0.15em;
 			text-underline-offset: 0.2em;
 			transition: text-decoration-thickness 300ms, text-underline-offset 300ms;
-			@apply p-2 border-1 border-transparent;
+			@apply p-2 border border-transparent;
 		}
 
 		&:hover {

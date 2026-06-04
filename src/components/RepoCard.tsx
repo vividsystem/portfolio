@@ -1,7 +1,7 @@
-import { A, createAsync, query } from "@solidjs/router";
-import { ArrowUpRight, CodeXml, GitMerge, GitPullRequest } from "lucide-solid";
-import { createEffect, createResource, Show } from "solid-js";
-import { Repository } from "~/routes/projects";
+import { A } from "@solidjs/router";
+import { ArrowUpRight, GitPullRequest } from "lucide-solid";
+import { Show } from "solid-js";
+import { Repository } from "~/routes/projects/[[type]]";
 
 export default function RepoCard(props: { repo: Repository }) {
 	return (
