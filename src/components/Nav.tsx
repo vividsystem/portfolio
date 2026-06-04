@@ -1,12 +1,21 @@
 import { A, useLocation } from "@solidjs/router";
-import { createSignal } from "solid-js";
+import { createEffect, createSignal } from "solid-js";
 import { Portal } from "solid-js/web";
 import { useMatchMedia } from "~/lib/media";
 
 export default function Nav() {
 	const noHover = useMatchMedia("(hover: none)")
+	const location = useLocation()
 
 	const [open, setOpened] = createSignal(false)
+	const [loc, setLoc] = createSignal("")
+
+	createEffect(() => {
+		if (location.pathname != loc()) {
+			setOpened(false)
+			setLoc(location.pathname)
+		}
+	})
 	return (
 		<Portal>
 			<div class="fixed bottom-0 left-0 right-0 flex flex-row items-center justify-center p-4">
@@ -29,8 +38,8 @@ export default function Nav() {
 									"pointer-events-auto": open() && noHover()
 								}}>
 									<ul class="flex flex-col gap-2">
-										<li class=""><A class="link-navy px-2" href="/projects/software" onClick={() => setOpened(false)}>Software</A></li>
-										<li class=""><A class="link-navy px-2" href="/projects/hardware" onClick={() => setOpened(false)}>Hardware</A></li>
+										<li class=""><A class="link-navy px-2" href="/projects/software">Software</A></li>
+										<li class=""><A class="link-navy px-2" href="/projects/hardware">Hardware</A></li>
 										<hr class="border-navy border-2 border-dotted" />
 										<li class=""><A class="link-navy px-2" href="/projects" onClick={() => setOpened(false)}>See all</A></li>
 									</ul>
